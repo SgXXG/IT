@@ -8,7 +8,7 @@ namespace TI_Lab2
 {
     static class LFSR_method
     {
-        public const int REGISTER_SIZE = 35;
+        public const int REGISTER_SIZE = 36;
         static byte[] register = new byte[REGISTER_SIZE];      
         
         private static void FillRegister(string initStr)
