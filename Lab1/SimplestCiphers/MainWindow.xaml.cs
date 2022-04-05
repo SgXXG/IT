@@ -23,22 +23,22 @@ namespace SimplestCiphers
 
             if (CiphersComboBox.Text == String.Empty)
             {
-                new NewMessageBox("Не выбран метод шифрования!", MessageType.Confirmation, MessageButtons.Ok).ShowDialog();
+                MessageBox.Show("Не выбран метод шифрования!");
                 return;
             }
 
-            if (CiphersComboBox.Text == "Метод железнодорожной изгороди(Ru)")
+            if (CiphersComboBox.Text == "Метод железнодорожной изгороди(En)")
             {
                 if (EncodingKeyTextBox.Text == "")
                 {
-                    new NewMessageBox("Не задан ключ шифрования!", MessageType.Confirmation, MessageButtons.Ok).ShowDialog();
+                    MessageBox.Show("Не задан ключ шифрования!");
                     return;
                 }
 
                 int key;
                 if (!int.TryParse(EncodingKeyTextBox.Text, out key))
                 {
-                    new NewMessageBox("Неверный ключ шифрования!", MessageType.Confirmation, MessageButtons.Ok).ShowDialog();
+                    MessageBox.Show("Неверный ключ шифрования!");
                     return;
                 }
 
@@ -68,7 +68,7 @@ namespace SimplestCiphers
             {
                 if (EncodingKeyTextBox.Text == "")
                 {
-                    new NewMessageBox("Не задан ключ шифрования!", MessageType.Confirmation, MessageButtons.Ok).ShowDialog();
+                    MessageBox.Show("Не задан ключ шифрования!");
                     return;
                 }
 
@@ -76,7 +76,7 @@ namespace SimplestCiphers
                 {
                     if (!(c is >= 'а' and <= 'я' or >= 'А' and <= 'Я'))
                     {
-                        new NewMessageBox("Неверный ключ шифрования!", MessageType.Confirmation, MessageButtons.Ok).ShowDialog();
+                        MessageBox.Show("Неверный ключ шифрования!");
                         return;
                     }
                 }
