@@ -1,0 +1,52 @@
+﻿<Window x:Class="SimplestCiphers.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SimplestCiphers"
+        xmlns:MD="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="Простейшие шифры" Height="500" Width="800" FontSize="24" MinWidth="700" MinHeight="500"
+        WindowStartupLocation="CenterScreen" FontFamily="JetBrains Mono NL">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="22.191"/>
+            <ColumnDefinition Width="30.435"/>
+            <ColumnDefinition Width="250"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <MD:Card Grid.Column="3" Grid.Row="0" Margin="5,5,5,5" Background ="AliceBlue">
+            <TextBox Margin="10" MD:HintAssist.Hint="Текст для Шифрования" x:Name="EncodingTextBox"></TextBox>
+        </MD:Card>
+
+        <MD:Card Grid.Column="3" Grid.Row="1" Margin="5,5,5,5" Background ="AliceBlue">
+            <TextBox Margin="10" MD:HintAssist.Hint="Текст для Дешифрования" x:Name="DecodingTextBox"></TextBox>
+        </MD:Card>
+
+        <MD:Card Grid.Column="0" Grid.RowSpan="2" Margin="5" Background="AliceBlue" Grid.ColumnSpan="3">
+            <StackPanel Orientation="Vertical">
+                <ComboBox MD:HintAssist.Hint="Вид шифрования" Margin="10" x:Name="CiphersComboBox">
+                    <ComboBoxItem Content="Метод железнодорожной изгороди(En)"/>
+                    <ComboBoxItem Content="Метод Плейфейра(En)"/>
+                    <ComboBoxItem Content="Метод Виженера с прогрессивным ключем(Ru)"/>
+                </ComboBox>
+                <TextBox Margin="10" MD:HintAssist.Hint="Ключ шифрования" x:Name="EncodingKeyTextBox"/>
+                <Button Margin="5" Height="50" Content="Зашифровать" Background="CadetBlue" FontSize="20"
+                        Click="ButtonClick" Tag="Encode"/>
+                <Button Margin="5" Height="50" Content="Расшифровать" Background="CadetBlue" FontSize="20"
+                        Click="ButtonClick" Tag="Decode"/>
+                <Separator Margin="10"></Separator>
+                <Button Margin="5" Height="50" Content="Зашифровать файл" Background="CadetBlue" FontSize="20"
+                        Click="FileOpenButtonClick" Tag="Encode"/>
+                <Button Margin="5" Height="50" Content="Расшифровать файл" Background="CadetBlue" FontSize="20"
+                        Click="FileOpenButtonClick" Tag="Decode"/>
+            </StackPanel>
+        </MD:Card>
+
+    </Grid>
+</Window>

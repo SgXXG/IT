@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32126.317
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimplestCiphers", "SimplestCiphers\SimplestCiphers.csproj", "{2CF7F844-34BE-4349-8A28-0E5D185FD298}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimplestCiphersConsole", "SimplestCiphersConsole\SimplestCiphersConsole.csproj", "{7AEE35A1-946E-44BA-8556-6B480F2E4375}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2CF7F844-34BE-4349-8A28-0E5D185FD298}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2CF7F844-34BE-4349-8A28-0E5D185FD298}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2CF7F844-34BE-4349-8A28-0E5D185FD298}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2CF7F844-34BE-4349-8A28-0E5D185FD298}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7AEE35A1-946E-44BA-8556-6B480F2E4375}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7AEE35A1-946E-44BA-8556-6B480F2E4375}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7AEE35A1-946E-44BA-8556-6B480F2E4375}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7AEE35A1-946E-44BA-8556-6B480F2E4375}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7E697152-3DA4-45B6-937E-101EEEF7D2C0}
+	EndGlobalSection
+EndGlobal
