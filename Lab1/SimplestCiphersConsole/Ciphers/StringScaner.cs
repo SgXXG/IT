@@ -1,71 +1,34 @@
 ﻿using System.Diagnostics;
 using System.Diagnostics.Tracing;
+using System.Text;
 
 namespace SimplestCiphers.Ciphers;
 
 public static class StringScaner
 {
-    public enum Language { En, Ru }
-
     public static string GetDesiredString(string source, Language language)
     {
-        string result = String.Empty;
+        StringBuilder result = new StringBuilder();
         foreach (char c in source)
-        {
-            if (language == Language.En)
-            {
-                if (c is >= 'a' and <= 'z' or >= 'A' and <= 'Z')
-                {
-                    result += c;
-                }
-            }
-            else
-            {
-                if (c is >= 'а' and <= 'я' or >= 'А' and <= 'Я')
-                {
-                    result += c;
-                }
-            }
-        }
-        return result;
+            if (language.Contains(c))
+                result.Append(c);
 
+        return result.ToString();
     }
-    
+
     public static string EmbedString(string source, string destination, Language language)
     {
-        string result = String.Empty;
+        StringBuilder result = new StringBuilder();
         int j = 0;
+
         foreach (char c in destination)
-        {
-            if (language == Language.En)
-            {
-                if (c is >= 'a' and <= 'z' or >= 'A' and <= 'Z')
-                {
-                    result += source[j++];
-                }
-                else
-                {
-                    result += c;
-                }
-            }
-            else
-            {
-                if (c is >= 'а' and <= 'я' or >= 'А' and <= 'Я')
-                {
-                    result += source[j++];
-                }
-                else
-                {
-                    result += c;
-                }
-            }
-        }
+            result.Append(language.Contains(c) ? source[j++] : c);
 
         if (j != source.Length - 1)
         {
-            result += source[j..];
+            result.Append(source[j..]);
         }
 
-        return result;
+        return result.ToString();
     }
 }

@@ -36,7 +36,7 @@ namespace SimplestCiphers
                 }
 
                 int key;
-                if (!int.TryParse(EncodingKeyTextBox.Text, out key))
+                if (!int.TryParse(EncodingKeyTextBox.Text, out key) || key < 1)
                 {
                     MessageBox.Show("Неверный ключ шифрования!");
                     return;
@@ -52,8 +52,27 @@ namespace SimplestCiphers
                 }
             }
 
-            if (CiphersComboBox.Text == "Метод поворачивающейся решетки(En)")
+            if (CiphersComboBox.Text == "Метод Плейфейра(En)")
             {
+                string text = EncodingTextBox.Text;
+                text = text.ToUpper();
+                text = PlayfairCipher.ClearText(text, "En");
+
+                if ((text[text.Length - 1] == 'X') && (text.Length % 2 != 0))
+                {
+                    MessageBox.Show("Ошибка в исходном тексте!");
+                    return;
+                }
+
+                for (int i = 1; i < text.Length; i += 2)
+                {
+                    if (text[i] == 'X' && text[i - 1] == 'X')
+                    {
+                        MessageBox.Show("Ошибка в исходном тексте. Две буквы X подряд");
+                        return;
+                    }
+                }
+
                 if (btn.Tag.ToString() == "Encode")
                 {
                     DecodingTextBox.Text = PlayfairCipher.Encode(EncodingTextBox.Text);
@@ -66,19 +85,14 @@ namespace SimplestCiphers
 
             if (CiphersComboBox.Text == "Метод Виженера с прогрессивным ключем(Ru)")
             {
-                if (EncodingKeyTextBox.Text == "")
-                {
-                    MessageBox.Show("Не задан ключ шифрования!");
-                    return;
-                }
 
-                foreach (char c in EncodingKeyTextBox.Text)
+                Language language = Ciphers.Language.RuLang;
+                string key = StringScaner.GetDesiredString(EncodingKeyTextBox.Text, language);
+
+                if (key == "")
                 {
-                    if (!(c is >= 'а' and <= 'я' or >= 'А' and <= 'Я'))
-                    {
-                        MessageBox.Show("Неверный ключ шифрования!");
-                        return;
-                    }
+                    MessageBox.Show("Ключ шифрования не может быть пустым");
+                    return;
                 }
 
                 if (btn.Tag.ToString() == "Encode")
@@ -89,9 +103,7 @@ namespace SimplestCiphers
                 {
                     EncodingTextBox.Text = VigenereCipher.Decode(DecodingTextBox.Text, EncodingKeyTextBox.Text);
                 }
-
             }
-
         }
 
         private void FileOpenButtonClick(object sender, RoutedEventArgs e)
@@ -102,15 +114,36 @@ namespace SimplestCiphers
             openFileDialog.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
             if (openFileDialog.ShowDialog() == true)
             {
+                string fileName = openFileDialog.FileName;
+
                 if (btn.Tag.ToString() == "Encode")
                 {
-                    EncodingTextBox.Text = File.ReadAllText(openFileDialog.FileName);
+                    EncodingTextBox.Text = File.ReadAllText(fileName);
                 }
                 else
                 {
-                    DecodingTextBox.Text = File.ReadAllText(openFileDialog.FileName);
+                    DecodingTextBox.Text = File.ReadAllText(fileName);
                 }
+
                 ButtonClick(sender, e);
+
+                string NewFileName = Path.GetDirectoryName(fileName) + "\\" +
+                                     btn.Tag.ToString() + "_" + Path.GetFileName(fileName);
+
+                FileStream NewFile = File.OpenWrite(NewFileName);
+                StreamWriter NewStreamWriter = new StreamWriter(NewFile);
+
+                if (btn.Tag.ToString() == "Encode")
+                {
+                    NewStreamWriter.Write(DecodingTextBox.Text);
+                }
+                else
+                {
+                    NewStreamWriter.Write(EncodingTextBox.Text);
+                }
+
+                NewStreamWriter.Close();
+
             }
         }
     }

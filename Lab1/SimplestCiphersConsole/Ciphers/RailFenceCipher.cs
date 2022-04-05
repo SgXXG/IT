@@ -6,7 +6,7 @@ namespace SimplestCiphers.Ciphers
     {
         private enum Direction { Up, Down }
 
-        private const StringScaner.Language _language = StringScaner.Language.En;
+        private static Language _language = Language.EnLang;
 
         public static string Encode(string source, int key)
         {

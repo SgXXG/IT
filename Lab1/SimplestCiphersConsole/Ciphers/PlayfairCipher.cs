@@ -2,7 +2,7 @@
 {
     public static class PlayfairCipher
     {
-        private const StringScaner.Language _language = StringScaner.Language.En;
+        private static Language _language = Language.EnLang;
 
         const int CIPHER_TABLE_SIZE = 5;
         static char[,] CIPHER_TABLE = { { 'C', 'R', 'Y', 'P', 'T' },
@@ -99,14 +99,12 @@
             }
         }
 
-        public static string Encode(string source)
+        public static string Encode(string plaintext)
         {
             IsCorrectSymbol isCorrectSymbol = GetCorrectSymbolMethod("En");
-
-            string str = StringScaner.GetDesiredString(source, _language);
-
-            string tmpStr = source;
-            str = str.ToUpper();
+            string tmpStr = plaintext;
+            plaintext = ClearText(plaintext, "En");
+            plaintext = plaintext.ToUpper();
             string resultStr = "";
             string nullSymbol = "X";
             int i = 0;
@@ -114,9 +112,9 @@
             bool isConcat = false;
             bool isInsert = false;
 
-            while (i < str.Length)
+            while (i < plaintext.Length)
             {
-                (int row, int column) firstSymbol = FindIndex(Symbol(str[i]));
+                (int row, int column) firstSymbol = FindIndex(Symbol(plaintext[i]));
                 i++;
 
                 while (!isCorrectSymbol(tmpStr[j]))
@@ -124,22 +122,23 @@
                 j++;
 
                 isConcat = false;
-                if (i >= str.Length)
+                if (i >= plaintext.Length)
                 {
-                    str = string.Concat(str, nullSymbol);
+                    plaintext = string.Concat(plaintext, nullSymbol);
                     tmpStr = tmpStr.Insert(j, nullSymbol);
                     isConcat = true;
                 }
 
                 isInsert = false;
-                if (str[i] == str[i - 1] && !isConcat)
+                if (plaintext[i] == plaintext[i - 1] && !isConcat)
                 {
-                    str = str.Insert(i, nullSymbol);
+                    plaintext = plaintext.Insert(i, nullSymbol);
                     tmpStr = tmpStr.Insert(j, nullSymbol);
                     isInsert = true;
                     j++;
                 }
-                (int row, int column) secondSymbol = FindIndex(Symbol(str[i]));
+
+                (int row, int column) secondSymbol = FindIndex(Symbol(plaintext[i]));
 
                 if (firstSymbol.row == secondSymbol.row)
                 {
@@ -154,7 +153,7 @@
                         secondSymbol.column++;
                 }
 
-                if (firstSymbol.column == secondSymbol.column && str[i] != str[i - 1])
+                if (firstSymbol.column == secondSymbol.column && plaintext[i] != plaintext[i - 1])
                 {
                     if (firstSymbol.row == CIPHER_TABLE_SIZE - 1)
                         firstSymbol.row = 0;
@@ -186,23 +185,19 @@
                 resultStr += CIPHER_TABLE[firstSymbol.row, firstSymbol.column];
                 resultStr += CIPHER_TABLE[secondSymbol.row, secondSymbol.column];
                 i++;
-
                 if (!isInsert)
                     j++;
             }
 
-        ResultText(tmpStr, ref resultStr, "En");
-        
-        return resultStr;
+            ResultText(tmpStr, ref resultStr, "En");
+            return resultStr;
         }
-        public static string Decode(string source)
+        public static string Decode(string encryptedText)
         {
-            string str = StringScaner.GetDesiredString(source, _language);
-
             IsCorrectSymbol isCorrectSymbol = GetCorrectSymbolMethod("En");
-            string tmpStr = source;
-            source = ClearText(source, "En");
-            source = source.ToUpper();
+            string tmpStr = encryptedText;
+            encryptedText = ClearText(encryptedText, "En");
+            encryptedText = encryptedText.ToUpper();
             string nullSymbol = "X";
             int i = 0;
             int j = 0;
@@ -210,9 +205,9 @@
             string resultStr = "";
 
 
-            while (i < source.Length)
+            while (i < encryptedText.Length)
             {
-                (int row, int column) firstSymbol = FindIndex(Symbol(source[i]));
+                (int row, int column) firstSymbol = FindIndex(Symbol(encryptedText[i]));
                 i++;
 
                 while (!isCorrectSymbol(tmpStr[j]))
@@ -220,21 +215,21 @@
                 j++;
 
                 isConcat = false;
-                if (i >= source.Length)
+                if (i >= encryptedText.Length)
                 {
-                    source = string.Concat(source, nullSymbol);
+                    encryptedText = string.Concat(encryptedText, nullSymbol);
                     tmpStr = tmpStr.Insert(j, nullSymbol);
                     isConcat = true;
                 }
 
-                if (source[i] == source[i - 1] && !isConcat)
+                if (encryptedText[i] == encryptedText[i - 1] && !isConcat)
                 {
-                    source = source.Insert(i, nullSymbol);
+                    encryptedText = encryptedText.Insert(i, nullSymbol);
                     tmpStr = tmpStr.Insert(j, nullSymbol);
                     j++;
                 }
 
-                (int row, int column) secondSymbol = FindIndex(Symbol(source[i]));
+                (int row, int column) secondSymbol = FindIndex(Symbol(encryptedText[i]));
 
                 if (firstSymbol.row == secondSymbol.row)
                 {
@@ -249,7 +244,7 @@
                         secondSymbol.column--;
                 }
 
-                if (firstSymbol.column == secondSymbol.column && source[i] != source[i - 1])
+                if (firstSymbol.column == secondSymbol.column && encryptedText[i] != encryptedText[i - 1])
                 {
                     if (firstSymbol.row == 0)
                         firstSymbol.row = CIPHER_TABLE_SIZE - 1;
