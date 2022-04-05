@@ -2,6 +2,7 @@
 using System.Text;
 using System.Windows;
 using System.Windows.Shapes;
+using System.Windows.Controls;
 using Microsoft.Win32;
 using System.IO;
 
@@ -45,11 +46,28 @@ namespace TI_Lab2
                 MessageBox.Show("Ошибка. Необходимо сгенерировать ключ шифрования!");
                 return;
             }
+
+            Button btn = sender as Button;
+
             ResultText.Text = LFSR_method.TextFromBin(LFSR_method.Encrypt(
                 LFSR_method.BinTextForm(Plaintext.Text), LFSR_method.BinTextForm(Key.Text)));
+            string fileName = "";
+            if (btn == Decrypt_Button)
+            {
+                fileName = System.IO.Path.GetDirectoryName(_filePath) + '\\' + "Decrypted_" +
+                                  System.IO.Path.GetFileName(_filePath);
+            }
 
-            string fileName = System.IO.Path.GetDirectoryName(_filePath) + '\\' + "New_" +
-                System.IO.Path.GetFileName(_filePath);
+            if (btn == Encrypt_Button)
+            {
+                fileName = System.IO.Path.GetDirectoryName(_filePath) + '\\' + "Encrypted_" +
+                                  System.IO.Path.GetFileName(_filePath);
+            }
+
+            //string fileName = System.IO.Path.GetDirectoryName(_filePath) + '\\' + "New_" +
+            //    System.IO.Path.GetFileName(_filePath);
+
+
             File.WriteAllBytes(fileName, LFSR_method.BinTextForm(ResultText.Text));
         }
 
