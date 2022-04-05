@@ -1,0 +1,15 @@
+D:\!Studing\2 Course\4 Sem\ТИ\Labs\SimplestCiphers-main\SimplestCiphers-main\SimplestCiphersConsole\bin\Debug\net6.0\SimplestCiphersConsole.exe
+D:\!Studing\2 Course\4 Sem\ТИ\Labs\SimplestCiphers-main\SimplestCiphers-main\SimplestCiphersConsole\bin\Debug\net6.0\SimplestCiphersConsole.deps.json
+D:\!Studing\2 Course\4 Sem\ТИ\Labs\SimplestCiphers-main\SimplestCiphers-main\SimplestCiphersConsole\bin\Debug\net6.0\SimplestCiphersConsole.runtimeconfig.json
+D:\!Studing\2 Course\4 Sem\ТИ\Labs\SimplestCiphers-main\SimplestCiphers-main\SimplestCiphersConsole\bin\Debug\net6.0\SimplestCiphersConsole.dll
+D:\!Studing\2 Course\4 Sem\ТИ\Labs\SimplestCiphers-main\SimplestCiphers-main\SimplestCiphersConsole\bin\Debug\net6.0\SimplestCiphersConsole.pdb
+D:\!Studing\2 Course\4 Sem\ТИ\Labs\SimplestCiphers-main\SimplestCiphers-main\SimplestCiphersConsole\obj\Debug\net6.0\SimplestCiphersConsole.csproj.AssemblyReference.cache
+D:\!Studing\2 Course\4 Sem\ТИ\Labs\SimplestCiphers-main\SimplestCiphers-main\SimplestCiphersConsole\obj\Debug\net6.0\SimplestCiphersConsole.GeneratedMSBuildEditorConfig.editorconfig
+D:\!Studing\2 Course\4 Sem\ТИ\Labs\SimplestCiphers-main\SimplestCiphers-main\SimplestCiphersConsole\obj\Debug\net6.0\SimplestCiphersConsole.AssemblyInfoInputs.cache
+D:\!Studing\2 Course\4 Sem\ТИ\Labs\SimplestCiphers-main\SimplestCiphers-main\SimplestCiphersConsole\obj\Debug\net6.0\SimplestCiphersConsole.AssemblyInfo.cs
+D:\!Studing\2 Course\4 Sem\ТИ\Labs\SimplestCiphers-main\SimplestCiphers-main\SimplestCiphersConsole\obj\Debug\net6.0\SimplestCiphersConsole.csproj.CoreCompileInputs.cache
+D:\!Studing\2 Course\4 Sem\ТИ\Labs\SimplestCiphers-main\SimplestCiphers-main\SimplestCiphersConsole\obj\Debug\net6.0\SimplestCiphersConsole.dll
+D:\!Studing\2 Course\4 Sem\ТИ\Labs\SimplestCiphers-main\SimplestCiphers-main\SimplestCiphersConsole\obj\Debug\net6.0\refint\SimplestCiphersConsole.dll
+D:\!Studing\2 Course\4 Sem\ТИ\Labs\SimplestCiphers-main\SimplestCiphers-main\SimplestCiphersConsole\obj\Debug\net6.0\SimplestCiphersConsole.pdb
+D:\!Studing\2 Course\4 Sem\ТИ\Labs\SimplestCiphers-main\SimplestCiphers-main\SimplestCiphersConsole\obj\Debug\net6.0\SimplestCiphersConsole.genruntimeconfig.cache
+D:\!Studing\2 Course\4 Sem\ТИ\Labs\SimplestCiphers-main\SimplestCiphers-main\SimplestCiphersConsole\obj\Debug\net6.0\ref\SimplestCiphersConsole.dll

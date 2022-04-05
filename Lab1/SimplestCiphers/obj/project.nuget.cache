@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "qFyQ3v0D+yaW9GLe5SwKc0yR7SKY2uOlDSn8/1twQ4EpzmIRDPvrF0dkdEAcvu0uBqiStv83x3bFh1Pvj8WDxg==",
+  "success": true,
+  "projectFilePath": "D:\\!Studing\\2 Course\\4 Sem\\ТИ\\Labs\\SimplestCiphers-main\\SimplestCiphers-main\\SimplestCiphers\\SimplestCiphers.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\garku\\.nuget\\packages\\materialdesigncolors\\2.0.4\\materialdesigncolors.2.0.4.nupkg.sha512",
+    "C:\\Users\\garku\\.nuget\\packages\\materialdesignthemes\\4.3.0\\materialdesignthemes.4.3.0.nupkg.sha512"
+  ],
+  "logs": []
+}
