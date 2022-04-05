@@ -1,0 +1,50 @@
+﻿<Window x:Class="TI_Lab2.MainWindow"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TI_Lab2"
+        mc:Ignorable="d"
+        Title="LFSR шифрование" Height="600" Width="800" FontFamily="JetBrains Mono NL" MinHeight="500" MinWidth="700">
+    <Grid x:Name="MainRoot" Background="AliceBlue">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <materialDesign:Card Grid.Row="0" Grid.Column="0" Grid.RowSpan="3" Margin="7" Background="CadetBlue" BorderThickness="3">
+            <StackPanel>
+                <Label Margin="2" FontWeight="DemiBold">Начальное состояние регистра</Label>
+                <TextBox x:Name="InitialString" materialDesign:HintAssist.Hint="Начальное состояние регистра"
+                         Margin="5"  TextWrapping="Wrap" AcceptsReturn="True" 
+                     VerticalScrollBarVisibility="Auto"/>
+                <Button x:Name="Encrypt_Button"  Margin="5" Height="32" Background="AliceBlue" Click="Encrypt_Click">Зашифровать</Button>
+                <Button x:Name="Decrypt_Button"  Margin="5" Height="32" Background="AliceBlue" Click="Encrypt_Click">Расшифровать</Button>
+                <Button x:Name="FormKey_Button"  Margin="5" Height="32" Background="AliceBlue" Click="GenerateKey_Click">Сгенерировать ключ</Button>
+                <Button x:Name="OpenFile_Button" Margin="5" Height="32" Background="AliceBlue" Click="OpenFile_Click">Выбрать файл</Button>
+            </StackPanel>
+        </materialDesign:Card>
+
+        <materialDesign:Card Grid.Row="0" Grid.Column="1" Margin="5">
+            <TextBox x:Name="Plaintext" TextWrapping="Wrap" AcceptsReturn="True" 
+                     VerticalScrollBarVisibility="Auto" IsReadOnly="True"/>
+        </materialDesign:Card>
+
+        <materialDesign:Card Grid.Row="1" Grid.Column="1" Margin="5">
+            <TextBox x:Name="Key" TextWrapping="Wrap" AcceptsReturn="True" 
+                     VerticalScrollBarVisibility="Auto" IsReadOnly="True"/>
+        </materialDesign:Card>
+
+        <materialDesign:Card Grid.Row="2" Grid.Column="1" Margin="5">
+            <TextBox x:Name="ResultText" TextWrapping="Wrap" AcceptsReturn="True" 
+                     VerticalScrollBarVisibility="Auto" IsReadOnly="True"/>
+        </materialDesign:Card>
+    </Grid>
+</Window>
