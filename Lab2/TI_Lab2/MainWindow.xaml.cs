@@ -56,12 +56,16 @@ namespace TI_Lab2
             {
                 fileName = System.IO.Path.GetDirectoryName(_filePath) + '\\' + "Decrypted_" +
                                   System.IO.Path.GetFileName(_filePath);
+
+                MessageBox.Show("Succesfully Decrypted");
             }
 
             if (btn == Encrypt_Button)
             {
                 fileName = System.IO.Path.GetDirectoryName(_filePath) + '\\' + "Encrypted_" +
                                   System.IO.Path.GetFileName(_filePath);
+
+                MessageBox.Show("Succesfully Encrypted");
             }
 
             //string fileName = System.IO.Path.GetDirectoryName(_filePath) + '\\' + "New_" +
@@ -101,7 +105,9 @@ namespace TI_Lab2
             }
 
             Key.Text = LFSR_method.TextFromBin(LFSR_method.FormKey(
-                InitialString.Text, Plaintext.Text.Length));          
+                InitialString.Text, Plaintext.Text.Length));
+
+            MessageBox.Show("Key is succesesfully generated");
         }
     }   
 }

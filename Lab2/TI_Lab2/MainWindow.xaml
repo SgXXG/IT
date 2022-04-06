@@ -5,7 +5,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TI_Lab2"
-        mc:Ignorable="d"
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen"
         Title="LFSR шифрование" Height="600" Width="800" FontFamily="JetBrains Mono NL" MinHeight="500" MinWidth="700">
     <Grid x:Name="MainRoot" Background="AliceBlue">
         <Grid.RowDefinitions>
