@@ -79,7 +79,7 @@ namespace TI_Lab2
         {
             if (InitialString.Text == String.Empty)
             {
-                MessageBox.Show("Ошибка. Необходимо ввести начальное состояние для регситра!");
+                MessageBox.Show("Ошибка. Необходимо ввести начальное состояние для регистра!");
                 return;
             }
 
@@ -100,7 +100,8 @@ namespace TI_Lab2
 
             if (InitialString.Text.Length != LFSR_method.REGISTER_SIZE)
             {
-                MessageBox.Show("Ошибка. Число разрядов регистра - 36!");
+                MessageBox.Show("Ошибка. Число разрядов регистра - 36! " +
+                    "Вы ввели: " + InitialString.Text.Length);
                 return;
             }
 
@@ -109,5 +110,10 @@ namespace TI_Lab2
 
             MessageBox.Show("Key is succesesfully generated");
         }
-    }   
+
+        private void InitialString_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            KeyLength.Text = InitialString.Text.Length.ToString();
+        }
+    }
 }

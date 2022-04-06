@@ -23,8 +23,14 @@
             <StackPanel>
                 <Label Margin="2" FontWeight="DemiBold">Начальное состояние регистра</Label>
                 <TextBox x:Name="InitialString" materialDesign:HintAssist.Hint="Начальное состояние регистра"
-                         Margin="5"  TextWrapping="Wrap" AcceptsReturn="True" 
-                     VerticalScrollBarVisibility="Auto"/>
+                            Margin="5"  TextWrapping="Wrap" AcceptsReturn="True" 
+                            VerticalScrollBarVisibility="Auto" TextChanged="InitialString_TextChanged"/>
+                <StackPanel x:Name="Panel" Orientation="Horizontal">
+                    <Label Margin="1" HorizontalAlignment="Center" VerticalAlignment="Center">Количество символов ключа:</Label>
+                    <TextBox x:Name="KeyLength" materialDesign:HintAssist.Hint="Количество символов ключа"
+                                Margin="1" IsReadOnly="True" Width="25" Height="20"/>
+                </StackPanel>
+                
                 <Button x:Name="Encrypt_Button"  Margin="5" Height="32" Background="AliceBlue" Click="Encrypt_Click">Зашифровать</Button>
                 <Button x:Name="Decrypt_Button"  Margin="5" Height="32" Background="AliceBlue" Click="Encrypt_Click">Расшифровать</Button>
                 <Button x:Name="FormKey_Button"  Margin="5" Height="32" Background="AliceBlue" Click="GenerateKey_Click">Сгенерировать ключ</Button>
