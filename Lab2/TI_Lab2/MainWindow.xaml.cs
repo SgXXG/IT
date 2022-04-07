@@ -100,8 +100,8 @@ namespace TI_Lab2
 
             if (InitialString.Text.Length != LFSR_method.REGISTER_SIZE)
             {
-                MessageBox.Show("Ошибка. Число разрядов регистра - 36! " +
-                    "Вы ввели: " + KeyLength.Text);
+                MessageBox.Show("Ошибка. Необходимое число разрядов регистра - " + LFSR_method.REGISTER_SIZE +
+                    "!\nВы ввели: " + KeyLength.Text);
                 return;
             }
 
