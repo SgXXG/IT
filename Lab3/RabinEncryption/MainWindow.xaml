@@ -1,0 +1,91 @@
+﻿<Window x:Class="RabinEncryption.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RabinEncryption"
+        mc:Ignorable="d"
+        Title="RabinEncryption" Height="700" Width="1200"
+        MinHeight="300" MinWidth="500"
+        WindowStartupLocation="CenterScreen"
+        FontFamily="JetBrains Mono" FontSize="17">
+    <Grid Margin="3" Background="CornflowerBlue">
+
+        <Grid.Resources>
+            <Style TargetType="TextBox" x:Key="TextBoxStyle">
+                <Setter Property="Margin" Value="3"/>
+                <Setter Property="VerticalScrollBarVisibility" Value="Auto"/>
+                <Setter Property="TextWrapping" Value="Wrap"/>
+                <Setter Property="AcceptsReturn" Value="True"/>
+            </Style>
+        </Grid.Resources>
+
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>   
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+        
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" 
+                       VerticalAlignment="Center">Исходный текст</TextBlock>
+            <TextBlock Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" 
+                       VerticalAlignment="Center">Шифротекст</TextBlock>
+
+            <TextBox Grid.Row="1" Grid.Column="0" x:Name="EncryptedText" Style="{StaticResource TextBoxStyle}" 
+                     AcceptsReturn="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto"
+                     Background="AliceBlue"></TextBox>
+            <TextBox Grid.Row="1" Grid.Column="1" x:Name="DecryptedText" Style="{StaticResource TextBoxStyle}"
+                     Background="AliceBlue"
+                     AcceptsReturn="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto"></TextBox>
+
+        </Grid>
+
+        <Grid Grid.Row="1" Margin="3">
+            
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Column="0" Margin="3 0"> Q: </TextBlock>
+            <TextBox Background="AliceBlue" Grid.Column="1" x:Name="QTextBox">991</TextBox>
+            <TextBlock Grid.Column="2" Margin="3 0"> P: </TextBlock>
+            <TextBox Background="AliceBlue" Grid.Column="3" x:Name="PTextBox">983</TextBox>
+            <TextBlock Grid.Column="4" Margin="3 0"> B: </TextBlock>
+            <TextBox Background="AliceBlue" Grid.Column="5" x:Name="BTextBox">790</TextBox>
+
+        </Grid>
+
+        <Grid Grid.Row="2">
+            
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Column="0" Margin="3" x:Name="EncryptionButton" 
+                    Background="CornflowerBlue"
+                    Click="EncryptionButton_OnClick"  Content="Зашифровать"></Button>
+            <Button Grid.Column="1" Margin="3" x:Name="DecryptionButton" 
+                    Background="CornflowerBlue"
+                    Click="DecryptionButton_OnClick"  Content="Расшифровать"></Button>
+        </Grid>
+
+    </Grid>
+</Window>

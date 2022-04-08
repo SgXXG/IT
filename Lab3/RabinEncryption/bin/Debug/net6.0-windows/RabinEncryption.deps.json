@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "RabinEncryption/1.0.0": {
+        "dependencies": {
+          "RabinEncryptionConsole": "1.0.0"
+        },
+        "runtime": {
+          "RabinEncryption.dll": {}
+        }
+      },
+      "RabinEncryptionConsole/1.0.0": {
+        "runtime": {
+          "RabinEncryptionConsole.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "RabinEncryption/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "RabinEncryptionConsole/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
