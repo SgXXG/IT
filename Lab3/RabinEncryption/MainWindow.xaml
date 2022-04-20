@@ -5,11 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RabinEncryption"
         mc:Ignorable="d"
-        Title="RabinEncryption" Height="700" Width="1200"
+        Title="RabinEncryption" Height="500" Width="700"
         MinHeight="300" MinWidth="500"
         WindowStartupLocation="CenterScreen"
-        FontFamily="JetBrains Mono" FontSize="17">
-    <Grid Margin="3" Background="CornflowerBlue">
+        FontFamily="JetBrains Mono" FontSize="16">
+    <Grid Margin="3">
 
         <Grid.Resources>
             <Style TargetType="TextBox" x:Key="TextBoxStyle">
@@ -39,16 +39,16 @@
             </Grid.RowDefinitions>
 
             <TextBlock Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" 
-                       VerticalAlignment="Center">Исходный текст</TextBlock>
+                       VerticalAlignment="Center">Plaintext</TextBlock>
             <TextBlock Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" 
-                       VerticalAlignment="Center">Шифротекст</TextBlock>
+                       VerticalAlignment="Center">Ciphertext</TextBlock>
 
-            <TextBox Grid.Row="1" Grid.Column="0" x:Name="EncryptedText" Style="{StaticResource TextBoxStyle}" 
-                     AcceptsReturn="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto"
-                     Background="AliceBlue"></TextBox>
+            <TextBox Grid.Row="1" Grid.Column="0" x:Name="EncryptedText" Style="{StaticResource TextBoxStyle}"
+                     TextWrapping="Wrap" AcceptsReturn="True" 
+                     VerticalScrollBarVisibility="Auto" IsReadOnly="True"></TextBox>
             <TextBox Grid.Row="1" Grid.Column="1" x:Name="DecryptedText" Style="{StaticResource TextBoxStyle}"
-                     Background="AliceBlue"
-                     AcceptsReturn="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto"></TextBox>
+                     TextWrapping="Wrap" AcceptsReturn="True" 
+                     VerticalScrollBarVisibility="Auto" IsReadOnly="True"></TextBox>
 
         </Grid>
 
@@ -64,11 +64,11 @@
             </Grid.ColumnDefinitions>
 
             <TextBlock Grid.Column="0" Margin="3 0"> Q: </TextBlock>
-            <TextBox Background="AliceBlue" Grid.Column="1" x:Name="QTextBox">991</TextBox>
+            <TextBox Grid.Column="1" x:Name="QTextBox">19</TextBox>
             <TextBlock Grid.Column="2" Margin="3 0"> P: </TextBlock>
-            <TextBox Background="AliceBlue" Grid.Column="3" x:Name="PTextBox">983</TextBox>
+            <TextBox Grid.Column="3" x:Name="PTextBox">11</TextBox>
             <TextBlock Grid.Column="4" Margin="3 0"> B: </TextBlock>
-            <TextBox Background="AliceBlue" Grid.Column="5" x:Name="BTextBox">790</TextBox>
+            <TextBox Grid.Column="5" x:Name="BTextBox">173</TextBox>
 
         </Grid>
 
@@ -80,11 +80,10 @@
             </Grid.ColumnDefinitions>
 
             <Button Grid.Column="0" Margin="3" x:Name="EncryptionButton" 
-                    Background="CornflowerBlue"
-                    Click="EncryptionButton_OnClick"  Content="Зашифровать"></Button>
+                    Click="EncryptionButton_OnClick"  Content="Cipher"></Button>
             <Button Grid.Column="1" Margin="3" x:Name="DecryptionButton" 
-                    Background="CornflowerBlue"
-                    Click="DecryptionButton_OnClick"  Content="Расшифровать"></Button>
+                    Click="DecryptionButton_OnClick"  Content="Decipher"></Button>
+
         </Grid>
 
     </Grid>

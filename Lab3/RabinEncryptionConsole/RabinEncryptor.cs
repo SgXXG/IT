@@ -31,23 +31,25 @@ namespace RabinEncryptionConsole
             _bValue = bValue;
         }
 
-        public byte[] Encrypt(byte[] data)
+        public (byte[], List<int>) Encrypt(byte[] data)
         {
 
             var result = new byte[data.Length * 4];
             var convertedBytes = new byte[4];
+            var list = new List<int>();
             for (var i = 0; i < data.Length; i++)
             {
                 var encryptedData = (data[i] * (data[i] + _bValue)) % _nValue;
+                list.Add(encryptedData);
                 convertedBytes = BitConverter.GetBytes(encryptedData);
                 Array.Copy(convertedBytes, 0, result, i * 4, 4);
             }
 
-            return result;
+            return (result, list);
 
         }
 
-        public byte[] Decrypt(byte[] data)
+        public IEnumerable<byte[]> Decrypt(byte[] data)
         {
             var (_, yp, yq) = Gcd(_pValue, _qValue);
 
@@ -61,13 +63,13 @@ namespace RabinEncryptionConsole
 
             for (var i = 0; i < bytesCount; i++)
             {
-                var discriminant = (_bValue * _bValue + 4 * encryptedData[i]) % _nValue;
+                var discriminant = (int)(((BigInteger)_bValue * _bValue + 4 * encryptedData[i]) % _nValue);
                 var mp = Pow(discriminant, (_pValue + 1) / 4, _pValue);
                 var mq = Pow(discriminant, (_qValue + 1) / 4, _qValue);
 
-                d[i, 0] = (yp * _pValue * mq + yq * _qValue * mp) % _nValue;
+                d[i, 0] = (int) (((BigInteger) yp * _pValue * mq + (BigInteger) yq * _qValue * mp) % _nValue);
                 d[i, 1] = _nValue - d[i, 0];
-                d[i, 2] = (yp * _pValue * mq - yq * _qValue * mp) % _nValue;
+                d[i, 2] = (int) (((BigInteger) yp * _pValue * mq - (BigInteger) yq * _qValue * mp) % _nValue);
                 d[i, 3] = _nValue - d[i, 2];
             }
 
@@ -85,8 +87,7 @@ namespace RabinEncryptionConsole
                 }
             }
 
-            return m.Select(column => column.Where(i => i is >= 0 and <= 255).FirstOrDefault(0))
-                .Select(i => (byte)i).ToArray();
+            return m.Select(column => column.Where(i => i is >= 0 and <= 255).Select(i => (byte)i).ToArray());
         }
 
         private static bool IsPrime(int number)
@@ -104,13 +105,22 @@ namespace RabinEncryptionConsole
 
         private static int Pow(int value, int power, int mod)
         {
-            int mul = 1;
-            for (var i = 0; i < power; i++)
+            BigInteger a1 = value;
+            BigInteger z1 = power;
+            BigInteger x = 1;
+            while (z1 != 0)
             {
-                mul *= value;
-                mul %= mod;
+                while ((z1 % 2) == 0)
+                {
+                    z1 /= 2;
+                    a1 = (a1 * a1) % mod;
+                }
+
+                z1--;
+                x = (x * a1) % mod;
             }
-            return mul;
+
+            return (int)x;
         }
 
         public static (int, int, int) Gcd(int a, int b)

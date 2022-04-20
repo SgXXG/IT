@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text;
 using System.Windows;
 using Microsoft.Win32;
@@ -54,16 +56,19 @@ namespace RabinEncryption
                     sb.Append($"{data[i]} ");
                 EncryptedText.Text = sb.ToString();
 
-                var result = encryptor.Encrypt(data);
+                var (result, list) = encryptor.Encrypt(data);
 
                 sb = new StringBuilder();
-                for (var i = 0; i < (result.Length < 1024 * 4 ? result.Length : 1024 * 4); i++)
-                    sb.Append($"{result[i]} ");
+                foreach (var i in list.Take(1024))
+                {
+                    sb.Append($"{i} ");
+                }
                 DecryptedText.Text = sb.ToString();
 
                 string NewFileName = Path.GetDirectoryName(fileName) + "\\" + "Encrypted" + "_" + Path.GetFileName(fileName);
                 File.WriteAllBytes(NewFileName, result);
             }
+
         }
 
         private void DecryptionButton_OnClick(object sender, RoutedEventArgs e)
@@ -81,20 +86,38 @@ namespace RabinEncryption
                 byte[] data = File.ReadAllBytes(fileName);
 
                 StringBuilder sb = new StringBuilder();
-                for (var i = 0; i < (data.Length < 1024 * 4 ? data.Length : 1024 * 4); i++) 
-                    sb.Append($"{data[i]} ");
+                var list = new List<int>();
+                for (var i = 0; i < data.Length / 4; i++)
+                    list.Add(BitConverter.ToInt32(data[(i * 4)..((i + 1) * 4)]));
+
+                foreach (var i in list.Take(1024))
+                {
+                    sb.Append($"{i} ");
+                }
+
                 DecryptedText.Text = sb.ToString();
 
                 var result = encryptor.Decrypt(data);
 
                 sb = new StringBuilder();
-                for (var i = 0; i < (result.Length < 1024 ? result.Length : 1024); i++)
-                    sb.Append($"{result[i]} ");
+
+                foreach (var bytes in result.Take(1024))
+                {
+                    for (var i = 0; i < bytes.Length; i++)
+                    {
+                        if (i > 0)
+                            sb.Append('/');
+                        sb.Append(bytes[i]);
+                    }
+                    sb.Append(' ');
+                }
+
                 EncryptedText.Text = sb.ToString();
 
                 string NewFileName = Path.GetDirectoryName(fileName) + "\\" + "Decrypted" + "_" + Path.GetFileName(fileName);
-                File.WriteAllBytes(NewFileName, result);
+                File.WriteAllBytes(NewFileName, result.Select(i => i.FirstOrDefault()).ToArray());
             }
+
         }
     }
 }

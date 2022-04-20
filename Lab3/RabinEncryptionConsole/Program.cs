@@ -10,11 +10,8 @@ using RabinEncryptionConsole;
 //
 // Console.WriteLine(Encoding.ASCII.GetString(decrypted));
 
-var i = RabinEncryptor.Gcd(5, 113); 
+var i = RabinEncryptor.Gcd(47, 53); 
 Console.WriteLine($"{i.Item2} {i.Item3} {i.Item1}");
 
- Parallel.For(0, 100, i =>
- {
-     Console.WriteLine(i);
- });
+
 
