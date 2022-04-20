@@ -64,11 +64,11 @@
             </Grid.ColumnDefinitions>
 
             <TextBlock Grid.Column="0" Margin="3 0"> Q: </TextBlock>
-            <TextBox Grid.Column="1" x:Name="QTextBox">19</TextBox>
+            <TextBox Grid.Column="1" x:Name="QTextBox" HorizontalScrollBarVisibility="Auto">19</TextBox>
             <TextBlock Grid.Column="2" Margin="3 0"> P: </TextBlock>
-            <TextBox Grid.Column="3" x:Name="PTextBox">11</TextBox>
+            <TextBox Grid.Column="3" x:Name="PTextBox" HorizontalScrollBarVisibility="Auto">11</TextBox>
             <TextBlock Grid.Column="4" Margin="3 0"> B: </TextBlock>
-            <TextBox Grid.Column="5" x:Name="BTextBox">173</TextBox>
+            <TextBox Grid.Column="5" x:Name="BTextBox" HorizontalScrollBarVisibility="Auto">173</TextBox>
 
         </Grid>
 
