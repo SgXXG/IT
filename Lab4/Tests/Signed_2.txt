@@ -1,0 +1,2 @@
+Privet, kak dela?
+r = 250, s = 13;
