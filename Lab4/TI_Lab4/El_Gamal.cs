@@ -66,7 +66,6 @@ namespace TI_Lab4
             this.data = data;
         }
 
-        /* Simplicity check */
         private bool IsPrime(int number)
         {
             if (number == 1 || number == 2)
@@ -80,7 +79,6 @@ namespace TI_Lab4
             return true;
         }
 
-        /* Exponencial algorithm */
         private int FastExponentiation(BigInteger mod, BigInteger num, BigInteger deg)
         {
             BigInteger y = 1;
@@ -102,10 +100,7 @@ namespace TI_Lab4
             int y = FastExponentiation(P, G, X);
             Y = y;
 
-            // Start value for empty file
             int hash = 100;
-
-            //Calculate hash
             foreach(byte b in data)
             {
                 hash = FastExponentiation(Q, hash + b, 2);   
