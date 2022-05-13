@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "DSA_WPF/1.0.0": {
+        "dependencies": {
+          "DSA": "1.0.0"
+        },
+        "runtime": {
+          "DSA_WPF.dll": {}
+        }
+      },
+      "DSA/1.0.0": {
+        "runtime": {
+          "DSA.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "DSA_WPF/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DSA/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

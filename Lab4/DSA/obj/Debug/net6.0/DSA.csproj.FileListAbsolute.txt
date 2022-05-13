@@ -1,0 +1,15 @@
+D:\!Studing\2 Course\4 Sem\ТИ\Labs\DSA-master\DSA-master\DSA\bin\Debug\net6.0\DSA.exe
+D:\!Studing\2 Course\4 Sem\ТИ\Labs\DSA-master\DSA-master\DSA\bin\Debug\net6.0\DSA.deps.json
+D:\!Studing\2 Course\4 Sem\ТИ\Labs\DSA-master\DSA-master\DSA\bin\Debug\net6.0\DSA.runtimeconfig.json
+D:\!Studing\2 Course\4 Sem\ТИ\Labs\DSA-master\DSA-master\DSA\bin\Debug\net6.0\DSA.dll
+D:\!Studing\2 Course\4 Sem\ТИ\Labs\DSA-master\DSA-master\DSA\bin\Debug\net6.0\DSA.pdb
+D:\!Studing\2 Course\4 Sem\ТИ\Labs\DSA-master\DSA-master\DSA\obj\Debug\net6.0\DSA.csproj.AssemblyReference.cache
+D:\!Studing\2 Course\4 Sem\ТИ\Labs\DSA-master\DSA-master\DSA\obj\Debug\net6.0\DSA.GeneratedMSBuildEditorConfig.editorconfig
+D:\!Studing\2 Course\4 Sem\ТИ\Labs\DSA-master\DSA-master\DSA\obj\Debug\net6.0\DSA.AssemblyInfoInputs.cache
+D:\!Studing\2 Course\4 Sem\ТИ\Labs\DSA-master\DSA-master\DSA\obj\Debug\net6.0\DSA.AssemblyInfo.cs
+D:\!Studing\2 Course\4 Sem\ТИ\Labs\DSA-master\DSA-master\DSA\obj\Debug\net6.0\DSA.csproj.CoreCompileInputs.cache
+D:\!Studing\2 Course\4 Sem\ТИ\Labs\DSA-master\DSA-master\DSA\obj\Debug\net6.0\DSA.dll
+D:\!Studing\2 Course\4 Sem\ТИ\Labs\DSA-master\DSA-master\DSA\obj\Debug\net6.0\refint\DSA.dll
+D:\!Studing\2 Course\4 Sem\ТИ\Labs\DSA-master\DSA-master\DSA\obj\Debug\net6.0\DSA.pdb
+D:\!Studing\2 Course\4 Sem\ТИ\Labs\DSA-master\DSA-master\DSA\obj\Debug\net6.0\DSA.genruntimeconfig.cache
+D:\!Studing\2 Course\4 Sem\ТИ\Labs\DSA-master\DSA-master\DSA\obj\Debug\net6.0\ref\DSA.dll
