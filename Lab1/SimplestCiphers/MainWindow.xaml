@@ -6,13 +6,13 @@
         xmlns:local="clr-namespace:SimplestCiphers"
         xmlns:MD="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="Простейшие шифры" Height="500" Width="800" FontSize="24" MinWidth="700" MinHeight="500"
+        Title="Простейшие шифры" Height="510" Width="900" FontSize="24" MinWidth="700" MinHeight="500"
         WindowStartupLocation="CenterScreen" FontFamily="JetBrains Mono NL">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="22.191"/>
             <ColumnDefinition Width="30.435"/>
-            <ColumnDefinition Width="250"/>
+            <ColumnDefinition Width="350"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
