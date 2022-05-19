@@ -39,14 +39,14 @@
                 </ComboBox>
                 <TextBox Margin="10" MD:HintAssist.Hint="Ключ шифрования" x:Name="EncodingKeyTextBox"/>
                 <Button Margin="5" Height="50" Content="Зашифровать" Background="CadetBlue" FontSize="20"
-                        Click="ButtonClick" Tag="Encode"/>
+                        Click="ButtonClick" Tag="Encode" BorderThickness="2"/>
                 <Button Margin="5" Height="50" Content="Расшифровать" Background="CadetBlue" FontSize="20"
-                        Click="ButtonClick" Tag="Decode"/>
+                        Click="ButtonClick" Tag="Decode" BorderThickness="2"/>
                 <Separator Margin="10"></Separator>
                 <Button Margin="5" Height="50" Content="Зашифровать файл" Background="CadetBlue" FontSize="20"
-                        Click="FileOpenButtonClick" Tag="Encode"/>
+                        Click="FileOpenButtonClick" Tag="Encode" BorderThickness="2"/>
                 <Button Margin="5" Height="50" Content="Расшифровать файл" Background="CadetBlue" FontSize="20"
-                        Click="FileOpenButtonClick" Tag="Decode"/>
+                        Click="FileOpenButtonClick" Tag="Decode" BorderThickness="2"/>
                 <Separator Margin="5"></Separator>
                 <TextBox x:Name="FilePathLabel" IsReadOnly="True" MD:HintAssist.Hint="Путь к файлу" AcceptsReturn="False" 
                      HorizontalScrollBarVisibility="Auto"></TextBox>
