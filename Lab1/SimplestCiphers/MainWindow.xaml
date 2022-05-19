@@ -33,9 +33,9 @@
         <MD:Card Grid.Column="0" Grid.RowSpan="2" Margin="5" Background="AliceBlue" Grid.ColumnSpan="3">
             <StackPanel Orientation="Vertical">
                 <ComboBox MD:HintAssist.Hint="Вид шифрования" Margin="10" x:Name="CiphersComboBox">
-                    <ComboBoxItem Content="Метод железнодорожной изгороди(En)"/>
-                    <ComboBoxItem Content="Метод Плейфейра(En)"/>
-                    <ComboBoxItem Content="Метод Виженера с прогрессивным ключем(Ru)"/>
+                    <ComboBoxItem Content="Метод железнодорожной изгороди(En)" FontSize="12"/>
+                    <ComboBoxItem Content="Метод Плейфейра(En)" FontSize="12"/>
+                    <ComboBoxItem Content="Метод Виженера с прогрессивным ключем(Ru)" FontSize="12"/>
                 </ComboBox>
                 <TextBox Margin="10" MD:HintAssist.Hint="Ключ шифрования" x:Name="EncodingKeyTextBox"/>
                 <Button Margin="5" Height="50" Content="Зашифровать" Background="CadetBlue" FontSize="20"
