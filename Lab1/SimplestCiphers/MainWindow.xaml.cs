@@ -12,6 +12,8 @@ namespace SimplestCiphers
     /// </summary>
     public partial class MainWindow : Window
     {
+        private string _filePath;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -109,11 +111,15 @@ namespace SimplestCiphers
         private void FileOpenButtonClick(object sender, RoutedEventArgs e)
         {
             Button btn = sender as Button;
-
-            OpenFileDialog openFileDialog = new OpenFileDialog();
+            
+            var openFileDialog = new OpenFileDialog();
             openFileDialog.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
+
             if (openFileDialog.ShowDialog() == true)
             {
+                _filePath = openFileDialog.FileName;
+                FilePathLabel.Text = _filePath;
+
                 string fileName = openFileDialog.FileName;
 
                 if (btn.Tag.ToString() == "Encode")

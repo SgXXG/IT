@@ -47,6 +47,9 @@
                         Click="FileOpenButtonClick" Tag="Encode"/>
                 <Button Margin="5" Height="50" Content="Расшифровать файл" Background="CadetBlue" FontSize="20"
                         Click="FileOpenButtonClick" Tag="Decode"/>
+                <Separator Margin="5"></Separator>
+                <TextBox x:Name="FilePathLabel" IsReadOnly="True" MD:HintAssist.Hint="Путь к файлу" AcceptsReturn="False" 
+                     HorizontalScrollBarVisibility="Auto"></TextBox>
             </StackPanel>
         </MD:Card>
 
