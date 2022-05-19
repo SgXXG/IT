@@ -91,7 +91,6 @@ namespace DSA_WPF
                 {
                     StatusLabel.Content = $"Подпись верна, (r){r} == (v){v}";
                     StatusLabel.Foreground = Brushes.Green;
-
                 }
                 else
                 {

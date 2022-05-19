@@ -25,7 +25,7 @@ namespace DSA
             P = p;
 
             if (h <= 1 || h >= p - 1)
-                throw new LogicException("h должно быть в интервале от 1 до (p - 1)");
+                throw new LogicException("h должно быть в интервале (1; (p - 1))");
             H = h;
 
             G = Pow(h, (p - 1) / q, p);
@@ -33,7 +33,7 @@ namespace DSA
                 throw new LogicException("h образует g меньше или равное 1");
 
             if (x <= 0 || x >= q)
-                throw new LogicException("x должно быть в интервале от 0 до q");
+                throw new LogicException("x должно быть в интервале (0; q)");
             X = x;
 
             Y = Pow(G, x, p);
@@ -44,7 +44,7 @@ namespace DSA
             BigInteger hash = GetHash(message);
 
             if (k <= 0 && k >= Q)
-                throw new LogicException("k должно быть в интервале от 0 до q");
+                throw new LogicException("k должно быть в интервале (0; q)");
             
             var r = Pow(G, k, P) % Q;
             var s = ((hash + X * r) * Pow(k, Q-2, Q)) % Q;
